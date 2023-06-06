@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
 
-public class Task {
+public class Task2 {
     public static void main(String[] args) throws FileNotFoundException {
 
         Scanner sc = new Scanner(new FileReader(args[0]));

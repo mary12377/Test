@@ -4,7 +4,7 @@ import org.example.service.Solution;
 
 import java.io.IOException;
 
-public class Task {
+public class Task3 {
     public static void main(String[] args) throws IOException {
         String writeTo = "";
         if(args.length < 3){

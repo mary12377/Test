@@ -3,7 +3,7 @@ package org.example;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
-public class Task {
+public class Task1 {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
