@@ -11,15 +11,14 @@ public class Task4 {
 
         Scanner sc = new Scanner(new FileReader(args[0]));
         List<Integer> nums = new ArrayList<>();
+        int sum = 0;
         while (sc.hasNext()) {
-            nums.add(sc.nextInt());
+            int temp = sc.nextInt();
+            nums.add(temp);
+            sum += temp;
         }
         System.out.println("Count of readed elements=" + nums.size());
 
-        int sum = 0;
-        for (int n : nums) {
-            sum += n;
-        }
 
         int avg = sum / nums.size();
 
