@@ -1,6 +1,7 @@
 package org.example.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.example.dto.Test;
 import org.example.dto.Tests;
 import org.example.dto.Value;
 import org.example.dto.Values;
@@ -16,12 +17,15 @@ public class Solution {
 
     public static void processFiles(String testsFilePaths, String valuesFilePaths, String writeTo) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        Tests tests = objectMapper.readValue(new File(testsFilePaths), Tests.class);
-        initMap(tests);
+        Test tests = objectMapper.readValue(new File(testsFilePaths), Test.class);
+        initMap(tests.getTests().get(0));
         Values values = objectMapper.readValue(new File(valuesFilePaths), Values.class);
 
         for (Value value : values.getValues()) {
-            TESTS_MAP.get(value.getId()).setValue(value.getValue());
+            Tests t = TESTS_MAP.get(value.getId());
+            if (t != null) {
+                t.setValue(value.getValue());
+            }
         }
 
         objectMapper.writeValue(new File(writeTo), tests);
